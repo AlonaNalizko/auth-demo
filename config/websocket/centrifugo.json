@@ -1,0 +1,45 @@
+{
+   "client": {
+      "allowed_origins": [
+         "*"
+      ],
+      "token": {
+         "audience": "centrifugo",
+         "user_id_claim": "sid",
+         "jwks_public_endpoint": "http://keycloak:8080/realms/sirius/protocol/openid-connect/certs"
+      },
+      "subscribe_to_user_personal_channel": {
+         "enabled": true,
+         "personal_channel_namespace": "personal",
+         "single_connection": true
+      }
+   },
+   "http_api": {
+      "key": "my_api_key"
+   },
+   "channel": {
+      "without_namespace": {
+         "allow_subscribe_for_client": true,
+         "allow_subscribe_for_anonymous": true,
+         "allow_publish_for_client": true,
+         "allow_publish_for_anonymous": true,
+         "allow_publish_for_subscriber": true
+      },
+      "namespaces": [
+         {
+            "name": "personal",
+            "presence": true
+         }
+      ]
+   },
+   "admin": {
+      "secret": "secret",
+      "enabled": true
+   },
+   "log": {
+      "level": "trace"
+   },
+   "usage_stats": {
+      "disabled": true
+   }
+}
