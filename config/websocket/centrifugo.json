@@ -4,7 +4,6 @@
          "*"
       ],
       "token": {
-         "audience": "centrifugo",
          "user_id_claim": "sid",
          "jwks_public_endpoint": "http://keycloak:8080/realms/sirius/protocol/openid-connect/certs"
       },
