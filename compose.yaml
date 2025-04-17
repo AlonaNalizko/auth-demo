@@ -6,8 +6,6 @@ services:
     ports:
       - 127.0.0.1:7070:8080
     environment:
-      # - KEYCLOAK_ADMIN=${KC_ADMIN_USER}
-      # - KEYCLOAK_ADMIN_PASSWORD=${KC_ADMIN_PASS}
       - KC_BOOTSTRAP_ADMIN_USERNAME=${KC_ADMIN_USER}
       - KC_BOOTSTRAP_ADMIN_PASSWORD=${KC_ADMIN_PASS}
       - KC_HTTP_ENABLED=true
