@@ -1,0 +1,22 @@
+services:
+  nginx:
+    image: nginx:mainline-alpine3.21
+    restart: unless-stopped
+    ports:
+      - 8080:80
+    volumes:
+      - ./web:/var/www/web
+      - ./config/nginx:/etc/nginx/templates
+
+  websocket:
+    image: centrifugo/centrifugo:v6.1
+    restart: unless-stopped
+    command: centrifugo -c config.json
+    environment:
+      - CENTRIFUGO_ADMIN_PASSWORD=${CENTRIFUGO_ADMIN_PASSWORD}
+    volumes:
+      - ./config/websocket/centrifugo.json:/centrifugo/config.json
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
