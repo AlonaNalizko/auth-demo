@@ -1,5 +1,6 @@
-# include:
-# - ./compose.demo-app.yaml
+include:
+#  - ./compose.demo.yaml
+- ./compose.demo-app.yaml
 
 services:
   keycloak:
